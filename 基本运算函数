@@ -1,0 +1,62 @@
+#操作函数
+lists = []                           #设置一个变量 保存运算数字和符号的列表
+isPressSign = False                  #添加一个判断是否按下运算符号的标志,假设默认没有按下按钮
+isPressNum = False
+#数字函数
+def pressNum(num):                   #设置一个数字函数 判断是否按下数字 并获取数字将数字写在显示版上
+    global lists                     #全局化lists和按钮状态isPressSign
+    global isPressSign
+    if isPressSign == False:
+        pass
+    else:                            #重新将运算符号状态设置为否
+       result.set(0)                 #输入栏初始显示为0
+       isPressSign = False
+                                     #判断界面的数字是否为0
+    oldnum = result.get()            #第一步
+    if oldnum =='0':                 #如果界面上数字为0 则获取按下的数字
+         result.set(num)
+    else:                            #如果界面上的而数字不是0  则链接上新按下的数字
+         newnum = oldnum + num
+         result.set(newnum)          #将按下的数字写到面板中
+         
+ 
+
+#运算函数
+def pressCompute(sign):             
+    global lists
+    global isPressSign
+    num = result.get()              #获取界面数字
+    
+    lists.append(num)               #保存界面获取的数字到列表中
+    result.set(sign)                #将输入的运算符写在面板中
+    lists.append(sign)              #将按下的运算符号保存到列表中
+    isPressSign = True
+ 
+    if sign =='AC':#如果按下的是'AC'按键，则清空列表内容，将屏幕上的数字键设置为默认数字0
+        lists.clear()
+        result.set(0)
+    if sign =='b':                 #如果按下的是退格‘’，则选取当前数字第一位到倒数第二位
+        a = num[0:-1]
+        lists.clear()
+        result.set(a)
+ 
+ 
+ #获取运算结果函数
+def pressEqual():
+    global lists
+    global isPressSign
+ 
+ 
+    curnum = result.get()           #设置当前数字变量，并获取添加到列表
+    lists.append(curnum)
+ 
+    computrStr = ''.join(lists)     #讲列表内容用join命令将字符串链接起来
+    endNum = eval(computrStr)       #用eval命令运算字符串中的内容
+ 
+                       
+    result.set(endNum)                   #讲运算结果显示到屏幕1
+    result2.set(computrStr)         #将运算过程显示到屏幕2
+    lists.clear()                   #清空列表内容
+ 
+ 
+ 
