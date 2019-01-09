@@ -1,0 +1,14 @@
+#数字键按钮
+
+btn7 = tkinter.Button(root,text = '7',bd = 0.5,command = lambda : pressNum('8'))
+btn8 = tkinter.Button(root,text = '8',command = lambda : pressNum('8'))
+btn9 = tkinter.Button(root,text = '9',bd = 0.5,command = lambda : pressNum('9'))
+
+btn4 = tkinter.Button(root,text = '4',command = lambda : pressNum('4'))
+btn5 = tkinter.Button(root,text = '5',command = lambda : pressNum('5'))
+btn6 = tkinter.Button(root,text = '6',command = lambda : pressNum('6'))
+
+btn1 = tkinter.Button(root,text = '1',command = lambda : pressNum('1'))
+btn2 = tkinter.Button(root,text = '2',command = lambda : pressNum('2'))
+btn3 = tkinter.Button(root,text = '3',command = lambda : pressNum('3'))
+btn0 = tkinter.Button(root,text = '0',command = lambda : pressNum('0'))
