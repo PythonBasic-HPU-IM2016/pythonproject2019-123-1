@@ -1,0 +1,19 @@
+import tkinter #导入tkinter模块,Tkinter 是 Python 的标准 GUI 库。Python 使用 Tkinter 可以快速的创建 GUI 应用程序,图形化用户界面。
+
+ 
+root=tkinter.Tk('red')#生成root主窗口
+root.minsize(280,500)#设置窗口大小
+root.title('***的计算器')#计算机的名字
+
+
+#1.界面布局
+#显示面板
+result = tkinter.StringVar()#StringVar是Tk库内部定义的字符串变量类型，在这里用于管理部件上面的字符；不过一般用在按钮button上。改变StringVar，按钮上的文字也随之改变。
+result.set(0)                           #显示面板显示结果1，用于显示默认数字0
+result2 = tkinter.StringVar()           #显示面板显示结果2，用于显示计算过程
+result2.set('欢迎使用计算器',)
+#显示版
+label = tkinter.Label(root,font = ('微软雅黑',20),bg = '#EEE9E9',bd ='9',fg = '#828282',anchor = 'nw',textvariable = result2)#textvariable 可变文本，与StringVar等配合着用
+label.place(width = 280,height = 170) #width:         组件的宽度；
+label2 = tkinter.Label(root,font = ('微软雅黑',30),bg = '#EEE9E9',bd ='9',fg = 'black',anchor = 'se',textvariable = result)
+label2.place(y = 170,width = 280,height = 60)#y: 组件右上角的y坐标；
