@@ -1,0 +1,10 @@
+#运算符号按钮
+btnac = tkinter.Button(root,text = 'AC',command = lambda :pressCompute('AC'))
+btnback = tkinter.Button(root,text = '←',bd = 0.5,command = lambda:pressCompute('b'))
+btndivi = tkinter.Button(root,text = '÷',command = lambda:pressCompute('/'))
+btnmul = tkinter.Button(root,text ='×',command = lambda:pressCompute('*'))
+btnsub = tkinter.Button(root,text = '-',command = lambda:pressCompute('-'))
+btnadd = tkinter.Button(root,text = '+',command = lambda:pressCompute('+'))
+btnequ = tkinter.Button(root,text = '=',command = lambda :pressEqual())
+btnper = tkinter.Button(root,text = '%',command = lambda:pressCompute('%'))
+btnpoint = tkinter.Button(root,text = '.',command = lambda:pressCompute('.'))
